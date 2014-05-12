@@ -1,0 +1,22 @@
+{% extends app.request.xmlHttpRequest
+? "Al3asemaBackendBundle:Layouts/:ajaxLayout.html.twig"
+: "Al3asemaBackendBundle:Layouts/:base.html.twig" %}
+
+{% form_theme form 'Al3asemaBackendBundle:Form:fields.html.twig' %}
+
+{% block main %}
+    <div style="margin: 20px auto">
+        {{ form(form) }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("select").select2();
+            $(".help").popover({
+                trigger: 'hover'
+            });
+        });
+    </script>
+{% endblock %}

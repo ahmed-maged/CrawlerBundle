@@ -1,0 +1,5 @@
+services:
+    form.type.dom_selector:
+            class: Al3asema\CrawlerBundle\Form\Type\DomSelectorType
+            tags:
+                - { name: form.type, alias: dom_selector }

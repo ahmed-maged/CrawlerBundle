@@ -1,0 +1,35 @@
+{% extends app.request.xmlHttpRequest
+? "Al3asemaBackendBundle:Layouts/:ajaxLayout.html.twig"
+: "Al3asemaBackendBundle:Layouts/:base.html.twig" %}
+{% block main %}
+    <div style="margin: 20px auto">
+        <table id="data-table" class="table table-bordered table-striped table-hover table-heading table-datatable">
+            <thead>
+                <tr>
+                    {% for column in columns %}
+                        <th>{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function(){
+            LoadDataTablesScripts(function(){
+                $("#data-table").dataTable(
+                        {
+                            "bProcessing": true,
+                            "bServerSide": true,
+                            "sAjaxSource": '{{ path('crawlers_ajax') }}'
+                        }
+                );
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends app.request.xmlHttpRequest
+? "Al3asemaBackendBundle:Layouts/:ajaxLayout.html.twig"
+: "Al3asemaBackendBundle:Layouts/:base.html.twig" %}
+
+{% form_theme form with ['Al3asemaBackendBundle:Form:fields.html.twig','ThraceFormBundle:Form:fields.html.twig'] %}
+
+{% block main %}
+    <div style="margin: 20px auto">
+        {{ form(form) }}
+
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {% javascripts
+    'bundles/al3asemacommonlayout/js/jquery.min.js'
+    'bundles/al3asemacommonlayout/plugins/jquery-ui/jquery-ui.js'
+    'bundles/thraceform/js/collection.js'
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("select").select2();
+            $(".help").popover({
+                trigger: 'hover'
+            });
+            $(".refreshes_s2").click(function(){
+                setTimeout(function(){
+                    $("select").select2();
+                },300);
+            });
+            var emailCount = '{{ form.props|length }}';
+            $('.add-another-simple-prop').click(function() {
+                var emailList = $('#crawler_page_template_props_simple_props');
+
+                var newWidget = emailList.attr('data-prototype');
+                newWidget = newWidget.replace(/__name__/g, emailCount);
+                emailCount++;
+
+                // create a new list element and add it to the list
+                var newLi = $('<li></li>').html(newWidget);
+                console.log(newLi);
+                newLi.appendTo($('#props'));
+                $("select").select2();
+                return false;
+            });
+            $('.add-another-reference-many-prop').click(function() {
+                var emailList = $('#crawler_page_template_props_reference_many_props');
+
+                var newWidget = emailList.attr('data-prototype');
+                newWidget = newWidget.replace(/__name__/g, emailCount);
+                emailCount++;
+
+                // create a new list element and add it to the list
+                var newLi = $('<li></li>').html(newWidget);
+                console.log(newLi);
+                newLi.appendTo($('#props'));
+                $("select").select2();
+                return false;
+            });
+        });
+    </script>
+{% endblock %}
