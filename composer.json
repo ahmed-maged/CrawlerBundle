@@ -1,0 +1,25 @@
+{
+    "name": "ahmedmaged/crawler-bundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "description": "Listing Crawler Bundle",
+    "homepage": "https://github.com/ahmed-maged/CrawlerBundle",
+    "keywords": ["crawler","scraper"],
+    "authors": [
+        {
+            "name": "Ahmed Maged",
+            "email": "ahmaaadmaged@gmail.com",
+            "homepage":"https://github.com/ahmed-maged",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "AhmedMaged\\CrawlerBundle": "" }
+    },
+    "target-dir": "AhmedMaged/CrawlerBundle",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*"
+    },
+    "minimum-stability": "dev"
+}
