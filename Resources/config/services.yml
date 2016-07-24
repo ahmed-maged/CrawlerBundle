@@ -2,13 +2,13 @@ imports:
   - { resource: forms.yml }
 
 parameters:
-#    al3asema_backend.example.class: Al3asema\BackendBundle\Example
+#    amaged_backend.example.class: AMaged\BackendBundle\Example
 
 services:
-#    al3asema_backend.example:
-#        class: %al3asema_backend.example.class%
+#    amaged_backend.example:
+#        class: %amaged_backend.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
     listing_crawler:
-        class: Al3asema\CrawlerBundle\Crawlers\BaseCrawler
+        class: AMaged\CrawlerBundle\Crawlers\BaseCrawler
         arguments: ['@doctrine.odm.mongodb.document_manager']
 

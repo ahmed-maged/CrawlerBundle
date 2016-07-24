@@ -4,14 +4,14 @@
  * Date: 5/3/14 - 10:25 PM
  */
 
-namespace Al3asema\CrawlerBundle\Form;
+namespace AMaged\CrawlerBundle\Form;
 
-use Al3asema\CrawlerBundle\Annotation\HelpReader;
-use Al3asema\CrawlerBundle\Document\AbstractEntityProperty;
-use Al3asema\CrawlerBundle\Document\ListingCrawler;
-use Al3asema\CrawlerBundle\Document\ListingCrawlerPageTemplate;
-use Al3asema\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
-use Al3asema\CrawlerBundle\Form\Type\DomSelectorType;
+use AMaged\CrawlerBundle\Annotation\HelpReader;
+use AMaged\CrawlerBundle\Document\AbstractEntityProperty;
+use AMaged\CrawlerBundle\Document\ListingCrawler;
+use AMaged\CrawlerBundle\Document\ListingCrawlerPageTemplate;
+use AMaged\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
+use AMaged\CrawlerBundle\Form\Type\DomSelectorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -56,7 +56,7 @@ class PropertyType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-                'data_class' => 'Al3asema\CrawlerBundle\Document\AbstractEntityProperty'
+                'data_class' => 'AMaged\CrawlerBundle\Document\AbstractEntityProperty'
             ));
     }
 

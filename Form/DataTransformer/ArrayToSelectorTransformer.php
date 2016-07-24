@@ -4,10 +4,10 @@
  * Date: 5/3/14 - 12:25 AM
  */
 
-namespace Al3asema\CrawlerBundle\Form\DataTransformer;
+namespace AMaged\CrawlerBundle\Form\DataTransformer;
 
 
-use Al3asema\CrawlerBundle\Document\Selector;
+use AMaged\CrawlerBundle\Document\Selector;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\Form\DataTransformerInterface;
 

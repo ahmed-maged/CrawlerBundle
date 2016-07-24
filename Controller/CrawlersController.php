@@ -1,12 +1,12 @@
 <?php
 
-namespace Al3asema\CrawlerBundle\Controller;
+namespace AMaged\CrawlerBundle\Controller;
 
-use Al3asema\BackendBundle\Form\ProgramType;
-use Al3asema\CrawlerBundle\Annotation\HelpReader;
-use Al3asema\CrawlerBundle\Document\ListingCrawler;
-use Al3asema\CrawlerBundle\Document\Selector;
-use Al3asema\CrawlerBundle\Form\ListingCrawlerType;
+use AMaged\BackendBundle\Form\ProgramType;
+use AMaged\CrawlerBundle\Annotation\HelpReader;
+use AMaged\CrawlerBundle\Document\ListingCrawler;
+use AMaged\CrawlerBundle\Document\Selector;
+use AMaged\CrawlerBundle\Form\ListingCrawlerType;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -16,7 +16,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Al3asema\CrawlerBundle\Document\Crawler as CrawlerDoc;
+use AMaged\CrawlerBundle\Document\Crawler as CrawlerDoc;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -38,7 +38,7 @@ class CrawlersController extends Controller
             'targetClass',
             'Actions'
         );
-        return $this->render('Al3asemaCrawlerBundle:Crawlers:index.html.twig', array('columns' => $columns));
+        return $this->render('AMagedCrawlerBundle:Crawlers:index.html.twig', array('columns' => $columns));
     }
 
     /**
@@ -58,7 +58,7 @@ class CrawlersController extends Controller
     /**
      *
      * @Route("/new", name="crawler_new")
-     * @Template("Al3asemaCrawlerBundle:Crawlers:new.html.twig")
+     * @Template("AMagedCrawlerBundle:Crawlers:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -87,12 +87,12 @@ class CrawlersController extends Controller
     /**
      *
      * @Route("/edit/{id}", name="crawlers_edit")
-     * @Template("Al3asemaCrawlerBundle:Crawlers:new.html.twig")
+     * @Template("AMagedCrawlerBundle:Crawlers:new.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $program = $dm->getRepository('Al3asemaCrawlerBundle:Crawler')->find($id);
+        $program = $dm->getRepository('AMagedCrawlerBundle:Crawler')->find($id);
         $editForm = $this->createForm(new ProgramType(), $program);
 
         if ($request->getMethod() == 'POST'){
@@ -118,7 +118,7 @@ class CrawlersController extends Controller
     public function deleteAction($id) {
 
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $entity = $dm->getRepository('Al3asemaCrawlerBundle:Crawler')->find($id);
+        $entity = $dm->getRepository('AMagedCrawlerBundle:Crawler')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find entity.');
@@ -157,7 +157,7 @@ class CrawlersController extends Controller
 
         $response  = $this->get('datatable_manager')
             ->setColumns(['_id', 'name', 'targetClass'])
-            ->setDataSource($this->get('doctrine_mongodb')->getManager()->getRepository('Al3asema\CrawlerBundle\Document\ListingCrawler'))
+            ->setDataSource($this->get('doctrine_mongodb')->getManager()->getRepository('AMaged\CrawlerBundle\Document\ListingCrawler'))
             ->datatable($request->query->all(), $dataAction);
 
         return new JsonResponse($response);

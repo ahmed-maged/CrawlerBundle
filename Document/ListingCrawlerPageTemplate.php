@@ -4,10 +4,10 @@
  * Date: 5/3/14 - 11:24 AM
  */
 
-namespace Al3asema\CrawlerBundle\Document;
+namespace AMaged\CrawlerBundle\Document;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
-use Al3asema\CrawlerBundle\Annotation\Help;
+use AMaged\CrawlerBundle\Annotation\Help;
 
 /**
  * @MongoDB\Document(collection="crawler_page_template")
@@ -92,10 +92,10 @@ class ListingCrawlerPageTemplate
     protected $props;
 
     public static $targetClasses = array(
-        'Program' =>'Al3asema\CoreBundle\Document\Program',
-        'Person'  =>'Al3asema\CoreBundle\Document\Person',
-        'Channel' =>'Al3asema\CoreBundle\Document\Channel',
-        'Session' =>'Al3asema\CoreBundle\Document\Session',
+        'Program' =>'AMaged\CoreBundle\Document\Program',
+        'Person'  =>'AMaged\CoreBundle\Document\Person',
+        'Channel' =>'AMaged\CoreBundle\Document\Channel',
+        'Session' =>'AMaged\CoreBundle\Document\Session',
     );
 
     /**
@@ -131,7 +131,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @param \Al3asema\CrawlerBundle\Document\Selector $paginationLinkSelector
+     * @param \AMaged\CrawlerBundle\Document\Selector $paginationLinkSelector
      */
     public function setPaginationLinkSelector($paginationLinkSelector)
     {
@@ -139,7 +139,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @return \Al3asema\CrawlerBundle\Document\Selector
+     * @return \AMaged\CrawlerBundle\Document\Selector
      */
     public function getPaginationLinkSelector()
     {
@@ -171,7 +171,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @param \Al3asema\CrawlerBundle\Document\Selector $targetLinkContainerSelector
+     * @param \AMaged\CrawlerBundle\Document\Selector $targetLinkContainerSelector
      */
     public function setTargetLinkContainerSelector($targetLinkContainerSelector)
     {
@@ -179,7 +179,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @return \Al3asema\CrawlerBundle\Document\Selector
+     * @return \AMaged\CrawlerBundle\Document\Selector
      */
     public function getTargetLinkContainerSelector()
     {
@@ -203,7 +203,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @param \Al3asema\CrawlerBundle\Document\Selector $targetSampleContainerSelector
+     * @param \AMaged\CrawlerBundle\Document\Selector $targetSampleContainerSelector
      */
     public function setTargetSampleContainerSelector($targetSampleContainerSelector)
     {
@@ -211,7 +211,7 @@ class ListingCrawlerPageTemplate
     }
 
     /**
-     * @return \Al3asema\CrawlerBundle\Document\Selector
+     * @return \AMaged\CrawlerBundle\Document\Selector
      */
     public function getTargetSampleContainerSelector()
     {

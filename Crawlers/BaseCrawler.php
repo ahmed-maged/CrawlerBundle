@@ -4,11 +4,11 @@
  * Date: 4/26/14 - 3:47 PM
  */
 
-namespace Al3asema\CrawlerBundle\Crawlers;
+namespace AMaged\CrawlerBundle\Crawlers;
 
 
-use Al3asema\CrawlerBundle\Document\AbstractEntityProperty;
-use Al3asema\CrawlerBundle\Document\ListingCrawler;
+use AMaged\CrawlerBundle\Document\AbstractEntityProperty;
+use AMaged\CrawlerBundle\Document\ListingCrawler;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Component\DomCrawler\Crawler;
 

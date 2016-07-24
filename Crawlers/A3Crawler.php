@@ -4,7 +4,7 @@
  * Date: 4/26/14 - 4:39 PM
  */
 
-namespace Al3asema\CrawlerBundle\Crawlers;
+namespace AMaged\CrawlerBundle\Crawlers;
 
 
 use Symfony\Component\DomCrawler\Crawler;
@@ -13,7 +13,7 @@ use Symfony\Component\DomCrawler\Crawler;
 /**
  * A decorator for Symfony Crawler
  *
- * @package Al3asema\CoreBundle\Crawlers
+ * @package AMaged\CoreBundle\Crawlers
  */
 class A3Crawler
 {

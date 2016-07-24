@@ -4,7 +4,7 @@
  * Date: 5/2/14 - 9:30 PM
  */
 
-namespace Al3asema\CrawlerBundle\Annotation;
+namespace AMaged\CrawlerBundle\Annotation;
 
 /**
  * @Annotation

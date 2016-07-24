@@ -4,7 +4,7 @@
  * Date: 5/1/14 - 9:31 PM
  */
 
-namespace Al3asema\CrawlerBundle\Document;
+namespace AMaged\CrawlerBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**

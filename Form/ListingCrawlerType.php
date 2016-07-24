@@ -1,12 +1,12 @@
 <?php
 
-namespace Al3asema\CrawlerBundle\Form;
+namespace AMaged\CrawlerBundle\Form;
 
-use Al3asema\CrawlerBundle\Annotation\HelpReader;
-use Al3asema\CrawlerBundle\Document\ListingCrawler;
-use Al3asema\CrawlerBundle\Document\ListingCrawlerPageTemplate;
-use Al3asema\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
-use Al3asema\CrawlerBundle\Form\Type\DomSelectorType;
+use AMaged\CrawlerBundle\Annotation\HelpReader;
+use AMaged\CrawlerBundle\Document\ListingCrawler;
+use AMaged\CrawlerBundle\Document\ListingCrawlerPageTemplate;
+use AMaged\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
+use AMaged\CrawlerBundle\Form\Type\DomSelectorType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -43,7 +43,7 @@ class ListingCrawlerType extends AbstractType
             ->add('pageTemplate', 'genemu_jqueryselect2_document', array(
                     'label' => 'Page Template',
                     'mapped'=>true,
-                    'class'=>'Al3asemaCrawlerBundle:ListingCrawlerPageTemplate',
+                    'class'=>'AMagedCrawlerBundle:ListingCrawlerPageTemplate',
                     'property'=>'name',
                     'multiple'=>false,
                     'required'=>false,
@@ -63,7 +63,7 @@ class ListingCrawlerType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Al3asema\CrawlerBundle\Document\ListingCrawler'
+            'data_class' => 'AMaged\CrawlerBundle\Document\ListingCrawler'
         ));
     }
 

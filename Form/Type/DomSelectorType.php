@@ -4,13 +4,13 @@
  * Date: 5/2/14 - 2:33 PM
  */
 
-namespace Al3asema\CrawlerBundle\Form\Type;
+namespace AMaged\CrawlerBundle\Form\Type;
 
-use Al3asema\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
+use AMaged\CrawlerBundle\Form\DataTransformer\ArrayToSelectorTransformer;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-use Al3asema\CrawlerBundle\Document\Selector;
+use AMaged\CrawlerBundle\Document\Selector;
 
 class DomSelectorType extends AbstractType
 {

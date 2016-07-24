@@ -4,7 +4,7 @@
  * Date: 5/2/14 - 10:35 PM
  */
 
-namespace Al3asema\CrawlerBundle\Annotation;
+namespace AMaged\CrawlerBundle\Annotation;
 
 
 use Doctrine\Common\Annotations\Reader;
@@ -16,7 +16,7 @@ class HelpReader
      */
     public $reader;
 
-    public $annotationClass = 'Al3asema\\CrawlerBundle\\Annotation\\Help';
+    public $annotationClass = 'AMaged\\CrawlerBundle\\Annotation\\Help';
 
     function __construct(Reader $reader)
     {

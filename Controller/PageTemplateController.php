@@ -1,15 +1,15 @@
 <?php
 
-namespace Al3asema\CrawlerBundle\Controller;
+namespace AMaged\CrawlerBundle\Controller;
 
-use Al3asema\BackendBundle\Form\ProgramType;
-use Al3asema\CrawlerBundle\Annotation\Help;
-use Al3asema\CrawlerBundle\Annotation\HelpReader;
-use Al3asema\CrawlerBundle\Document\ListingCrawlerPageTemplate;
-use Al3asema\CrawlerBundle\Document\ListingCrawler;
-use Al3asema\CrawlerBundle\Document\Selector;
-use Al3asema\CrawlerBundle\Form\ListingCrawlerPageTemplateType;
-use Al3asema\CrawlerBundle\Form\ListingCrawlerType;
+use AMaged\BackendBundle\Form\ProgramType;
+use AMaged\CrawlerBundle\Annotation\Help;
+use AMaged\CrawlerBundle\Annotation\HelpReader;
+use AMaged\CrawlerBundle\Document\ListingCrawlerPageTemplate;
+use AMaged\CrawlerBundle\Document\ListingCrawler;
+use AMaged\CrawlerBundle\Document\Selector;
+use AMaged\CrawlerBundle\Form\ListingCrawlerPageTemplateType;
+use AMaged\CrawlerBundle\Form\ListingCrawlerType;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\ODM\MongoDB\DocumentManager;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,7 +19,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\DomCrawler\Crawler;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
-use Al3asema\CrawlerBundle\Document\Crawler as CrawlerDoc;
+use AMaged\CrawlerBundle\Document\Crawler as CrawlerDoc;
 
 /**
  * @Route("/pageTemplates")
@@ -39,13 +39,13 @@ class PageTemplateController extends Controller
             'targetClass',
             'Actions'
         );
-        return $this->render('Al3asemaCrawlerBundle:PageTemplates:index.html.twig', array('columns' => $columns));
+        return $this->render('AMagedCrawlerBundle:PageTemplates:index.html.twig', array('columns' => $columns));
     }
 
     /**
      *
      * @Route("/new", name="page_template_new")
-     * @Template("Al3asemaCrawlerBundle:PageTemplates:new.html.twig")
+     * @Template("AMagedCrawlerBundle:PageTemplates:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -74,12 +74,12 @@ class PageTemplateController extends Controller
     /**
      *
      * @Route("/edit/{id}", name="page_templates_edit")
-     * @Template("Al3asemaCrawlerBundle:PageTemplates:new.html.twig")
+     * @Template("AMagedCrawlerBundle:PageTemplates:new.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $program = $dm->getRepository('Al3asemaCrawlerBundle:ListingCrawlerPageTemplate')->find($id);
+        $program = $dm->getRepository('AMagedCrawlerBundle:ListingCrawlerPageTemplate')->find($id);
         $reader = new AnnotationReader();
         $helpReader = new HelpReader($reader);
         $editForm = $this->createForm(new ListingCrawlerPageTemplateType($helpReader), $program);
@@ -108,7 +108,7 @@ class PageTemplateController extends Controller
     public function deleteAction($id) {
 
         $dm = $this->get('doctrine_mongodb')->getManager();
-        $entity = $dm->getRepository('Al3asemaCrawlerBundle:ListingCrawlerPageTemplate')->find($id);
+        $entity = $dm->getRepository('AMagedCrawlerBundle:ListingCrawlerPageTemplate')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find entity.');
@@ -147,7 +147,7 @@ class PageTemplateController extends Controller
 
         $response  = $this->get('datatable_manager')
             ->setColumns(['_id', 'name', 'targetClass'])
-            ->setDataSource($this->get('doctrine_mongodb')->getManager()->getRepository('Al3asema\CrawlerBundle\Document\ListingCrawlerPageTemplate'))
+            ->setDataSource($this->get('doctrine_mongodb')->getManager()->getRepository('AMaged\CrawlerBundle\Document\ListingCrawlerPageTemplate'))
             ->datatable($request->query->all(), $dataAction);
 
         return new JsonResponse($response);

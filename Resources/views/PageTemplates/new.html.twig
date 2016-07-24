@@ -1,8 +1,8 @@
 {% extends app.request.xmlHttpRequest
-? "Al3asemaBackendBundle:Layouts/:ajaxLayout.html.twig"
-: "Al3asemaBackendBundle:Layouts/:base.html.twig" %}
+? "AMagedBackendBundle:Layouts/:ajaxLayout.html.twig"
+: "AMagedBackendBundle:Layouts/:base.html.twig" %}
 
-{% form_theme form with ['Al3asemaCrawlerBundle:Form:fields.html.twig','ThraceFormBundle:Form:fields.html.twig'] %}
+{% form_theme form with ['AMagedCrawlerBundle:Form:fields.html.twig','ThraceFormBundle:Form:fields.html.twig'] %}
 
 {% block main %}
     <div style="margin: 20px auto">
@@ -12,8 +12,8 @@
 {% endblock %}
 {% block javascripts %}
     {% javascripts
-    'bundles/al3asemacommonlayout/js/jquery.min.js'
-    'bundles/al3asemacommonlayout/plugins/jquery-ui/jquery-ui.js'
+    'bundles/amagedcommonlayout/js/jquery.min.js'
+    'bundles/amagedcommonlayout/plugins/jquery-ui/jquery-ui.js'
     'bundles/thraceform/js/collection.js'
     %}
     <script src="{{ asset_url }}"></script>
